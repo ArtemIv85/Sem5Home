@@ -9,16 +9,16 @@ public class StudentController {
 
     private StudentService service = new StudentService();
 
-    public Student createStudent(String name, String lastName, int idgroup) {
-        return service.createStudent(name, lastName, idgroup);
+    public Student createStudent(String name, String lastName) {
+        return service.createStudent(name, lastName);
 
     }
 
-    public Student getById(int id) {
+    public Student getById(int id, List<Student> students) {
 
         Student student = null;
         try {
-            student = service.getById(id);
+            student = service.getById(id,students);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -27,5 +27,9 @@ public class StudentController {
 
     public List<Student> getAllStudents() {
         return service.getAllStudents();
+    }
+
+    public List<Student> getNotInGroup(List<Student> b){
+        return service.getNotInGroup(b);
     }
 }

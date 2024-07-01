@@ -13,7 +13,7 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return String.format(getClass().getSimpleName() + ": id = %s, name = %s, lastName = %s", id, name, lastName);
+        return String.format(getClass().getSimpleName() + ": id = %s, name = %s, lastName = %s \n", id, name, lastName);
     }
 
     public int getId(){
